@@ -1,5 +1,4 @@
 import React from "react";
-import env from "react-dotenv";
 var axios = require("axios").default;
 
 //  This function sets up an options object and then makes a client-side axios get request to
@@ -11,7 +10,7 @@ const callDarkSkyApiSeattle = () => {
     url: "https://dark-sky.p.rapidapi.com/47.6062,-122.3321",
     params: { lang: "en", units: "auto" },
     headers: {
-      "x-rapidapi-key": env.REACT_APP_API_KEY,
+      "x-rapidapi-key": "26417dba96mshc908747af3c9234p1996ddjsnf25834dcd684",
       "x-rapidapi-host": "dark-sky.p.rapidapi.com",
     },
   };

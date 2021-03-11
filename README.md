@@ -6,7 +6,6 @@ This is a group project.  We intend to combine API's to provide users the exact 
 React.js
 Express.js
 Node.js
-react-dotenv
 DarkSky
 axios
 
