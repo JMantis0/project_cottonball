@@ -12,7 +12,7 @@ const callTrailApiSeattle = () => {
           'q-city_cont': 'Seattle',
           'q-state_cont': 'Washington',
       // The longitude and latitude in the url path are for Seattle, Washington.
-          lat: '34.147.6062',
+          lat: '47.6062',
           lon: '-122.3321',
           radius: '25',
         //   'q-country_cont': 'United States',
