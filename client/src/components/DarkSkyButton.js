@@ -1,5 +1,5 @@
 import React from "react";
-var axios = require("axios").default;
+const axios = require("axios").default;
 
 //  This function sets up an options object and then makes a client-side axios get request to
 //  the DarkSky weather API.
@@ -11,15 +11,15 @@ const callDarkSkyApiSeattle = () => {
     params: { lang: "en", units: "auto" },
     headers: {
       "x-rapidapi-key": "26417dba96mshc908747af3c9234p1996ddjsnf25834dcd684",
-      "x-rapidapi-host": "dark-sky.p.rapidapi.com",
-    },
+      "x-rapidapi-host": "dark-sky.p.rapidapi.com"
+    }
   };
   axios
     .request(options)
-    .then(function (response) {
+    .then((response) => {
       console.log(response.data);
     })
-    .catch(function (error) {
+    .catch((error) => {
       console.error(error);
     });
 };
