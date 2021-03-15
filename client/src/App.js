@@ -2,6 +2,7 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import DarkSkyButton from "./components/DarkSkyButton";
+import TrailsButton from "./components/TrailsButton";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <h2>Welcome to Project Cottonball</h2>
         <DarkSkyButton />
+        <TrailsButton />
         <img src={logo} className="App-logo" alt="logo" />
         <img src={logo} className="App-logo" alt="logo" />
         <img src={logo} className="App-logo" alt="logo" />
