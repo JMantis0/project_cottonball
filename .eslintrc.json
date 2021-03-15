@@ -11,8 +11,7 @@
     "commonjs": true,
     "node": true
   },
-  // "extends": "prettier",
-  // "plugins": ["prettier"],
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
   "rules": {
     "array-callback-return": "error",
     "camelcase": "error",
@@ -42,7 +41,7 @@
   },
   "settings": {
     "react": {
-      "version": "^16.13.1" 
-   }
+      "version": "^16.13.1"
+    }
   }
 }
