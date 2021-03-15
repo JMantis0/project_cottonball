@@ -3,22 +3,29 @@ import logo from "./logo.svg";
 import "./App.css";
 import DarkSkyButton from "./components/DarkSkyButton";
 import TrailsButton from "./components/TrailsButton";
+import TestPageButton from "./components/TestPageButton";
+import TestPage from "./pages/TestPage";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <div className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <img src={logo} className="App-logo" alt="logo" />
-        <img src={logo} className="App-logo" alt="logo" />
-        <h2>Welcome to Project Cottonball</h2>
-        <DarkSkyButton />
-        <TrailsButton />
-        <img src={logo} className="App-logo" alt="logo" />
-        <img src={logo} className="App-logo" alt="logo" />
-        <img src={logo} className="App-logo" alt="logo" />
-      </div>
-    </div>
+    <Router>
+      <Route exact path="/">
+        <div className="App">
+          <div className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
+            <h2>Welcome to Project Cottonball</h2>
+            <DarkSkyButton />
+            <TrailsButton />
+            <TestPageButton />
+            <img src={logo} className="App-logo" alt="logo" />
+          </div>
+        </div>
+      </Route>
+      <Route exact path="/test">
+        <TestPage />
+      </Route>
+    </Router>
   );
 }
 
