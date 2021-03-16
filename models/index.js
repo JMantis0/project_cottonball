@@ -26,7 +26,9 @@ fs.readdirSync(__dirname)
     );
   })
   .forEach(function(file) {
-    var model = sequelize.import(path.join(__dirname, file));
+    // var model = sequelize.import(path.join(__dirname, file));
+    // The line immediately below was a solution to replace the line immediately above, found at https://stackoverflow.com/questions/62917111/sequelize-import-is-not-a-function
+    const model = require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes)
     db[model.name] = model;
   });
 
