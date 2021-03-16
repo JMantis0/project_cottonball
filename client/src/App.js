@@ -4,6 +4,7 @@ import "./App.css";
 import DarkSkyButton from "./components/DarkSkyButton";
 import TrailsButton from "./components/TrailsButton";
 import TestPageButton from "./components/TestPageButton";
+import TestApiRouteButton from "./components/TestApiRouteButton";
 import TestPage from "./pages/TestPage";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
@@ -18,6 +19,7 @@ function App() {
             <DarkSkyButton />
             <TrailsButton />
             <TestPageButton />
+            <TestApiRouteButton />
             <img src={logo} className="App-logo" alt="logo" />
           </div>
         </div>

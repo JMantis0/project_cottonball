@@ -12,4 +12,4 @@ router.get("/test", (req, res) => {
   res.send(200);
 });
 
-export default router;
+module.exports = router;
