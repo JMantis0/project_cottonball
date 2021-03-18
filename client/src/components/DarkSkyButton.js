@@ -4,23 +4,18 @@ const axios = require("axios").default;
 //  This function sets up an options object and then makes a client-side axios get request to
 //  the DarkSky weather API.
 const callDarkSkyApiSeattle = () => {
-  const options = {
-    method: "GET",
-    // The longitude and latitude in the url path are for Seattle, Washington.
-    url: "https://dark-sky.p.rapidapi.com/47.6062,-122.3321",
-    params: { lang: "en", units: "auto" },
-    headers: {
-      "x-rapidapi-key": "26417dba96mshc908747af3c9234p1996ddjsnf25834dcd684",
-      "x-rapidapi-host": "dark-sky.p.rapidapi.com"
-    }
-  };
+  console.log("Call DarkSky Button Clicked...");
+  console.log("Sending get request to backend");
+  console.log("Expecting backend to call DarkSky and return response object");
   axios
-    .request(options)
-    .then((response) => {
+    .get("/api/callDarkSky")
+    .then(response => {
+      console.log("Response from server: ");
       console.log(response.data);
     })
-    .catch((error) => {
-      console.error(error);
+    .catch(error => {
+      console.log("There was an error: ");
+      console.log(error);
     });
 };
 
