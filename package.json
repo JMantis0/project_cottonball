@@ -35,7 +35,6 @@
     "express": "^4.17.1",
     "if-env": "^1.0.4",
     "mysql2": "^2.2.5",
-    "react": "^16.13.1",
     "sequelize": "^6.5.1"
   },
   "browserslist": {
