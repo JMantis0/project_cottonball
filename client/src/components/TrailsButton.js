@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from '@material-ui/core';
 const axios = require("axios").default;
 
 //  This function sets up an options object and then makes a client-side axios get request to
@@ -22,14 +23,16 @@ const callTrailApiSeattle = () => {
 const TrailsButton = () => {
   return (
     <div>
-      <button
+      <Button
         id="trailsBtn"
+        variant="contained" 
+        color="primary"
         onClick={() => {
           callTrailApiSeattle();
         }}
       >
         Call Trails API (Check Console)
-      </button>
+      </Button>
     </div>
   );
 };

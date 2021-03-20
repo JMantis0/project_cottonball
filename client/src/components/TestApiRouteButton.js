@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from '@material-ui/core';
 import axios from "axios";
 
 const TestApiRouteButton = () => {
@@ -15,13 +16,15 @@ const TestApiRouteButton = () => {
   };
   return (
     <div>
-      <button
+      <Button
+        variant="contained" 
+        color="secondary"
         onClick={() => {
           handleClick();
         }}
       >
         Test the apiRoute
-      </button>
+      </Button>
     </div>
   );
 };

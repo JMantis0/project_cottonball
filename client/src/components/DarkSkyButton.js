@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from '@material-ui/core';
 const axios = require("axios").default;
 
 //  This function sets up an options object and then makes a client-side axios get request to
@@ -22,14 +23,16 @@ const callDarkSkyApiSeattle = () => {
 const DarkSkyButton = () => {
   return (
     <div>
-      <button
+      <Button
+        variant="contained" 
+        color="primary"
         id="darkSkyBtn"
         onClick={() => {
           callDarkSkyApiSeattle();
         }}
       >
         Call DarkSky (Check Console)
-      </button>
+      </Button>
     </div>
   );
 };

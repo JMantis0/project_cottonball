@@ -2,7 +2,6 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import DarkSkyButton from "../components/DarkSkyButton";
 import TrailsButton from "../components/TrailsButton";
-
 const TestPage = () => {
   const history = useHistory();
   return (
