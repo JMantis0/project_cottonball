@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from '@material-ui/core';
 import { useHistory } from "react-router-dom";
 
 const TestPageButton = () => {
@@ -9,14 +10,16 @@ const TestPageButton = () => {
   };
   return (
     <div>
-      <button
+      <Button
         id="testPageBtn"
+        variant="contained" 
+        color="primary"
         onClick={() => {
           handleClick();
         }}
       >
         Go to the Test Page
-      </button>
+      </Button>
     </div>
   );
 };
