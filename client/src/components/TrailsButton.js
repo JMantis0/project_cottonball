@@ -16,6 +16,7 @@ const callTrailApiSeattle = () => {
     })
     .catch(error => {
       console.log("There was an error: ");
+      console.log("Is this code even working? ");
       console.log(error);
     });
 };
