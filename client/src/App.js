@@ -11,7 +11,6 @@ import LogoutButton from "./components/LogoutButton";
 import UserProfile from "./components/UserProfile";
 import TestPage from "./pages/TestPage";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import axios from "axios";
 
 function App() {
   return (

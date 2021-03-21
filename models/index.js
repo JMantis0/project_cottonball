@@ -9,12 +9,8 @@ var config = require(__dirname + "/../config/config.js")[env];
 var db = {};
 
 if (config.use_env_variable) {
-  console.log("12 config.use_env_variable is: " + config.use_env_variable);
-
   var sequelize = new Sequelize(process.env[config.use_env_variable]);
 } else {
-  console.log("16 config.use_env_variable is: " + config.use_env_variable);
-
   var sequelize = new Sequelize(
     config.database,
     config.username,
