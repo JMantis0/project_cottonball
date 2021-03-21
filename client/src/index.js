@@ -12,7 +12,9 @@ ReactDOM.render(
     redirectUri={
       window.location.href.includes("localhost")
         ? "http://localhost:3000"
-        : "https://project-cottonball.herokuapp.com/"
+        : window.location.href.includes("test")
+          ? "https://test-cottonball-auth0.herokuapp.com/"
+          : "https://project-cottonball.herokuapp.com/"
     }
   >
     <App />
