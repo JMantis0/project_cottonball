@@ -10,9 +10,10 @@ ReactDOM.render(
     domain="jmantis-auth.us.auth0.com"
     clientId="aNLTSSORpHeSWRsFxjwoTikI5BriwnCn"
     // Use this redirectUri for production
-    // redirectUri="https://project-cottonball.herokuapp.com/"
+    redirectUri="https://project-cottonball.herokuapp.com/"
+    
     // Use this redirectUri for development
-    redirectUri="http://localhost:3000"
+    // redirectUri="http://localhost:3000"
   >
     <App />
   </Auth0Provider>,
