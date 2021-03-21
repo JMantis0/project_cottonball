@@ -11,6 +11,7 @@ import LogoutButton from "./components/LogoutButton";
 import UserProfile from "./components/UserProfile";
 import TestPage from "./pages/TestPage";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import axios from "axios";
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
         <div className="App">
           <div className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
-            <h2>Welcome to Project Cottonball</h2>
+            <h2>Welcome to Project Cottonball</h2>           
             <UserProfile />
             <AuthLoginButton />
             <DarkSkyButton />

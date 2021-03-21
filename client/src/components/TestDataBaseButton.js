@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Button } from '@material-ui/core';
+import { Button } from "@material-ui/core";
 import React from "react";
 
 const TestDataBaseButton = () => {
@@ -23,7 +23,7 @@ const TestDataBaseButton = () => {
   return (
     <div>
       <Button
-        variant="contained" 
+        variant="contained"
         color="primary"
         onClick={() => {
           handleClick();
