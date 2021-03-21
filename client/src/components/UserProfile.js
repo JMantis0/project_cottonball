@@ -7,7 +7,9 @@ const Profile = () => {
   if (isLoading) {
     return <div>Loading ...</div>;
   }
-  if (!isAuthenticated) return <h3>You Are Not Logged In</h3>;
+  if (!isAuthenticated) {
+    return <h3>You Are Not Logged In</h3>;
+  }
 
   return (
     isAuthenticated && (
