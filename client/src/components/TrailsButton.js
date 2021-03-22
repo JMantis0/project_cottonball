@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from '@material-ui/core';
+import { Button } from "@material-ui/core";
 const axios = require("axios").default;
 
 //  This function sets up an options object and then makes a client-side axios get request to
@@ -7,7 +7,9 @@ const axios = require("axios").default;
 const callTrailApiSeattle = () => {
   console.log("Call Trails API Button Clicked...");
   console.log("Sending get request to backend");
-  console.log("Expecting backend to call Trails API and return response object");
+  console.log(
+    "Expecting backend to call Trails API and return response object"
+  );
   axios
     .get("/api/callTrailsAPI")
     .then(response => {
@@ -26,7 +28,7 @@ const TrailsButton = () => {
     <div>
       <Button
         id="trailsBtn"
-        variant="contained" 
+        variant="contained"
         color="primary"
         onClick={() => {
           callTrailApiSeattle();

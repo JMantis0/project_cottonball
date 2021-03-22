@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from '@material-ui/core';
+import { Button } from "@material-ui/core";
 const axios = require("axios").default;
 
 //  This function sets up an options object and then makes a client-side axios get request to
@@ -24,7 +24,7 @@ const DarkSkyButton = () => {
   return (
     <div>
       <Button
-        variant="contained" 
+        variant="contained"
         color="primary"
         id="darkSkyBtn"
         onClick={() => {

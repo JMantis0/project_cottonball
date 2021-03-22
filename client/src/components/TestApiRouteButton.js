@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from '@material-ui/core';
+import { Button } from "@material-ui/core";
 import axios from "axios";
 
 const TestApiRouteButton = () => {
@@ -17,7 +17,7 @@ const TestApiRouteButton = () => {
   return (
     <div>
       <Button
-        variant="contained" 
+        variant="contained"
         color="secondary"
         onClick={() => {
           handleClick();

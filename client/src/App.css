@@ -8,7 +8,8 @@
 }
 
 .App-header {
-  background-image: url("./assets/images/cloud-background.jpg");
+  /* background-image: url("./assets/images/cloud-background.jpg"); */
+  background-color: black;
   background-position: center;
   height: 150px;
   padding: 20px;
@@ -40,7 +41,6 @@
 #returnBtn:hover {
   background-color: hotpink;
 }
-
 
 @keyframes App-logo-spin {
   from {
