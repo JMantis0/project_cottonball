@@ -10,6 +10,7 @@ import AuthLoginButton from "./components/AuthLoginButton";
 import LogoutButton from "./components/LogoutButton";
 import UserProfile from "./components/UserProfile";
 import TestPage from "./pages/TestPage";
+import SearchTrails from "./pages/SearchTrails";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
@@ -28,12 +29,16 @@ function App() {
             <TestApiRouteButton />
             <TestDataBaseButton />
             <LogoutButton />
+            <button>Search Trails page</button>
             <img src={logo} className="App-logo" alt="logo" />
           </div>
         </div>
       </Route>
       <Route exact path="/test">
         <TestPage />
+      </Route>
+      <Route exact path="/searchTrails">
+        <SearchTrails />
       </Route>
     </Router>
   );
