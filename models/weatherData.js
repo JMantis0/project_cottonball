@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    let CurrentWeather = sequelize.define( "CurrentWeather", {
+    let Weather = sequelize.define( "Weather", {
 
         current_temp_id: {
             type: DataTypes.INTEGER,
@@ -9,42 +9,66 @@ module.exports = function(sequelize, DataTypes) {
         realFeel_temp: {
             type: DataTypes.INTEGER
         },
-        icon: {
+        current_icon: {
             type: DataTypes.STRING,
             allowNull: true
         },
-        nearestStormDistance: {
+        current_nearestStormDistance: {
             type: DataTypes.INTEGER  
         },
-        precip_intensity: {
+        current_precip_intensity: {
             type: DataTypes.INTEGER  
         },
-        precip_probability: {
+        current_precip_probability: {
             type: DataTypes.INTEGER  
         },
-        summary: {
+        current_summary: {
             type: DataTypes.STRING,
         },
-        temperature: {
+        current_temperature: {
             type: DataTypes.STRING,
         },
-        time: {
+        current_time: {
             type: DataTypes.INTEGER  
         },
-        uvIndex: {
+        current_uvIndex: {
             type: DataTypes.INTEGER    
         },
-        visibility: {
+        current_visibility: {
             type: DataTypes.INTEGER  
         },
-        windGust: {
+        current_windGust: {
             type: DataTypes.STRING,
+        },
+        daily_apparent_temp_high: {
+            type: DataTypes.INTEGER  
+        },
+        daily_apparent_temp_low: {
+            type: DataTypes.INTEGER  
+        },
+        daily_icon: {
+            type: DataTypes.STRING,
+        },
+        daily_icon: {
+            type: DataTypes.STRING,
+        },
+        daily_precip_probability: {
+            type: DataTypes.INTEGER  
+        },
+        daily_precip_type: {
+            type: DataTypes.STRING,
+        },
+        daily_summary: {
+            type: DataTypes.STRING,
+        },
+        daily_uv_index: {
+            type: DataTypes.INTEGER  
+        },
+        daily_visibility: {
+            type: DataTypes.INTEGER  
         }
-
-
-
-
-
     });
-    return CurrentWeather;
+    return Weather;
 }
+
+//These are some preliminary weather code for the model. There is also hourly and minutely available.

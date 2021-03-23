@@ -45,4 +45,3 @@ module.exports = function(sequelize, DataTypes) {
     return Trail;
 }
 
-// places[0].
