@@ -6,7 +6,7 @@ const TrailsPageButton = () => {
   const history = useHistory();
   const handleClick = () => {
     console.log("Search Trails Page Button Clicked... heading to Search Trails page"); 
-    history.push("/test");
+    history.push("/searchTrails");
   };
   return (
     <div>
