@@ -83,7 +83,7 @@ export default function Album() {
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
             <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-              Album layout
+              Let's go hiking
             </Typography>
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
             Search Puget Sound Region Trails and Local Weather Conditions
