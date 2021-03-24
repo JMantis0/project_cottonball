@@ -11,6 +11,7 @@ import LogoutButton from "./components/LogoutButton";
 import UserProfile from "./components/UserProfile";
 import TestPage from "./pages/TestPage";
 import SearchTrails from "./pages/SearchTrails";
+import TrailsPageButton from "./components/TrailsPageButton";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
             <DarkSkyButton />
             <TrailsButton />
             <TestPageButton />
+            <TrailsPageButton />
             <TestApiRouteButton />
             <TestDataBaseButton />
             <LogoutButton />
