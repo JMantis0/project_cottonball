@@ -5,6 +5,7 @@ import App from "./App";
 import registerServiceWorker from "./registerServiceWorker";
 import { Auth0Provider } from "@auth0/auth0-react";
 
+
 ReactDOM.render(
   <Auth0Provider
     domain="jmantis-auth.us.auth0.com"

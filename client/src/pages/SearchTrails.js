@@ -1,129 +1,204 @@
-import React from "react";
-// import { useHistory } from "react-router-dom";
-import { Box, Grid, Container } from "@material-ui/core";
-import SimpleCard from "../components/SimpleCard";
-// import NavBar from "../components/NavBar";
-import TrailsButton from "../components/TrailsButton";
-// import { blue } from "@material-ui/core/colors";
-// import TrailCard from "../components/TrailCard";
+import React from 'react';
+import AppBar from '@material-ui/core/AppBar';
+import Button from '@material-ui/core/Button';
+import CameraIcon from '@material-ui/icons/PhotoCamera';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Grid from '@material-ui/core/Grid';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
+import Link from '@material-ui/core/Link';
 
-
-const SearchTrails = () => {
-    const header_style = {
-        color: "white",
-        backgroundColor: "DodgerBlue",
-        padding: "30px",
-        margin: "40px",
-        fontFamily: "Roboto"
-    }
+function Copyright() {
   return (
- 
-    <div>
-      <Box>
-        <Container>
-          <Grid
-            container
-            direction="row"
-            justify="center"
-            alignItems="center"
-            item
-            xs={12}
-            spacing={3}
-          >
-            <h1 style={header_style}>This is the Search Trails page</h1>
-          </Grid>
-          <Grid container spacing={1}></Grid>
-          <SimpleCard />
-        </Container>
-      </Box>
-    </div>
+    <Typography variant="body2" color="textSecondary" align="center">
+      {'Copyright © '}
+      <Link color="inherit" href="https://material-ui.com/">
+        Your Website
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
   );
-};
+}
 
-export default SearchTrails;
+const useStyles = makeStyles((theme) => ({
+  icon: {
+    marginRight: theme.spacing(2),
+  },
+  heroContent: {
+    backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing(8, 0, 6),
+  },
+  heroButtons: {
+    marginTop: theme.spacing(4),
+  },
+  cardGrid: {
+    paddingTop: theme.spacing(8),
+    paddingBottom: theme.spacing(8),
+  },
+  card: {
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  cardMedia: {
+    paddingTop: '56.25%', // 16:9
+  },
+  cardContent: {
+    flexGrow: 1,
+  },
+  footer: {
+    backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing(6),
+  },
+}));
 
-// import React from 'react';
-// import { useSelector } from 'react-redux';
-// import { makeStyles, useTheme } from '@material-ui/core/styles';
-// import Typography from '@material-ui/core/Typography';
-// import Container from '@material-ui/core/Container';
-// import Grid from '@material-ui/core/Grid';
-// import Button from '@material-ui/core/Button';
-// import NoSsr from '@material-ui/core/NoSsr';
-// // import Link from 'docs/src/modules/components/Link';
+const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-// const useStyles = makeStyles(
-//   (theme) => ({
-//     root: {
-//       padding: theme.spacing(2),
-//       minHeight: 160,
-//       marginTop: theme.spacing(8),
-//     },
+export default function Album() {
+  const classes = useStyles();
 
-//     link: {
-//       marginTop: theme.spacing(1),
-//       display: 'block',
-//     },
-//     img: {
-//       maxWidth: 960,
-//       width: '100%',
-//       height: 'auto',
-//       marginTop: theme.spacing(4),
-//     },
-//     button: {
-//       margin: theme.spacing(4, 0, 6),
-//     },
-//   }),
-//   { name: 'Themes' },
-// );
+  return (
+    <React.Fragment>
+      <CssBaseline />
+      <AppBar position="relative">
+        <Toolbar>
+          <CameraIcon className={classes.icon} />
+          <Typography variant="h6" color="inherit" noWrap>
+            Album layout
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <main>
+        {/* Hero unit */}
+        <div className={classes.heroContent}>
+          <Container maxWidth="sm">
+            <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+              Album layout
+            </Typography>
+            <Typography variant="h5" align="center" color="textSecondary" paragraph>
+              Something short and leading about the collection below—its contents, the creator, etc.
+              Make it short and sweet, but not too short so folks don&apos;t simply skip over it
+              entirely.
+            </Typography>
+            <div className={classes.heroButtons}>
+              <Grid container spacing={2} justify="center">
+                <Grid item>
+                  <Button variant="contained" color="primary">
+                    Main call to action
+                  </Button>
+                </Grid>
+                <Grid item>
+                  <Button variant="outlined" color="primary">
+                    Secondary action
+                  </Button>
+                </Grid>
+              </Grid>
+            </div>
+          </Container>
+        </div>
+        <Container className={classes.cardGrid} maxWidth="md">
+          {/* End hero unit */}
+          <Grid container spacing={4}>
+            {cards.map((card) => (
+              <Grid item key={card} xs={12} sm={6} md={4}>
+                <Card className={classes.card}>
+                  <CardMedia
+                    className={classes.cardMedia}
+                    image="https://source.unsplash.com/random"
+                    title="Image title"
+                  />
+                  <CardContent className={classes.cardContent}>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      Heading
+                    </Typography>
+                    <Typography>
+                      This is a media card. You can use this section to describe the content.
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button size="small" color="primary">
+                      View
+                    </Button>
+                    <Button size="small" color="primary">
+                      Edit
+                    </Button>
+                  </CardActions>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </main>
+      {/* Footer */}
+      <footer className={classes.footer}>
+        <Typography variant="h6" align="center" gutterBottom>
+          Footer
+        </Typography>
+        <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
+          Something here to give the footer a purpose!
+        </Typography>
+        <Copyright />
+      </footer>
+      {/* End footer */}
+    </React.Fragment>
+  );
+}
 
-// export default function Themes() {
-//   const classes = useStyles();
-//   const t = useSelector((state) => state.options.t);
-//   const theme = useTheme();
 
+// import React from "react";
+// // import { useHistory } from "react-router-dom";
+// import { Box, Grid, Container } from "@material-ui/core";
+// import SimpleCard from "../components/SimpleCard";
+// import NavBar from "../components/NavBar";
+// import TrailsButton from "../components/TrailsButton";
+
+// const SearchTrails = () => {
+//   const header_style = {
+//     color: "white",
+//     backgroundColor: "DodgerBlue",
+//     padding: "30px",
+//     margin: "40px",
+//     fontFamily: "Roboto"
+//   };
 //   return (
-//     <div className={classes.root}>
-//       <NoSsr defer>
-//         <Container maxWidth="md">
-//           <Typography variant="h4" component="h2" align="center" gutterBottom>
-//             {t('themes')}
-//           </Typography>
-//           <Typography variant="body1" align="center" gutterBottom>
-//             {t('themesDescr')}
-//           </Typography>
-//           <Link
-//             href="https://material-ui.com/store/?utm_source=docs&utm_medium=referral&utm_campaign=home-store"
-//             data-ga-event-category="store"
-//             data-ga-event-action="click"
-//             data-ga-event-label="home"
-//             className={classes.link}
+//     <div>
+//       <NavBar />
+
+//       <Box>
+//         <Container>
+//           <Grid
+//             container
+//             direction-xs-row
+//             justify="center"
+//             alignItems="center"
+//             item
+//             spacing={3}
 //           >
-//             <NoSsr defer>
-//               <img
-//                 className={classes.img}
-//                 alt={t('themesButton')}
-//                 src={`/static/images/themes-${theme.palette.type}.jpg`}
-//                 loading="eager"
-//                 width={500}
-//                 height={307}
-//               />
-//             </NoSsr>
-//           </Link>
-//           <Grid container justify="center">
-//             <Button
-//               variant="outlined"
-//               data-ga-event-category="store"
-//               data-ga-event-action="click"
-//               data-ga-event-label="home"
-//               href="https://material-ui.com/store/?utm_source=docs&utm_medium=referral&utm_campaign=home-store"
-//               className={classes.button}
-//             >
-//               {t('themesButton')}
-//             </Button>
+//             <h1 style={header_style}>This is the Search Trails page</h1>
+//           </Grid>
+//           <Grid
+//             container
+//             direction="row"
+//             justify="center"
+//             alignItems="center"
+//             spacing={3}
+//           >
+//             <SimpleCard xs={3} />
+//             <SimpleCard xs={3} />
+//             <SimpleCard xs={3} />
+//             <SimpleCard xs={3} />
 //           </Grid>
 //         </Container>
-//       </NoSsr>
+//       </Box>
 //     </div>
 //   );
-// }
+// };
+
+// export default SearchTrails;
