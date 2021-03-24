@@ -1,21 +1,39 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 import { Box, Grid, Container } from "@material-ui/core";
+import SimpleCard from "../components/SimpleCard";
 // import NavBar from "../components/NavBar";
 import TrailsButton from "../components/TrailsButton";
+// import { blue } from "@material-ui/core/colors";
 // import TrailCard from "../components/TrailCard";
 
+
 const SearchTrails = () => {
+    const header_style = {
+        color: "white",
+        backgroundColor: "DodgerBlue",
+        padding: "30px",
+        margin: "40px",
+        fontFamily: "Roboto"
+    }
   return (
+ 
     <div>
       <Box>
         <Container>
-        <Grid container item xs={12} spacing={3}>
-        <h1>This is the Search Trails page</h1>
-            </Grid>
-          <Grid container spacing={1}>
-            
+          <Grid
+            container
+            direction="row"
+            justify="center"
+            alignItems="center"
+            item
+            xs={12}
+            spacing={3}
+          >
+            <h1 style={header_style}>This is the Search Trails page</h1>
           </Grid>
+          <Grid container spacing={1}></Grid>
+          <SimpleCard />
         </Container>
       </Box>
     </div>
