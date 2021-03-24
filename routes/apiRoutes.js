@@ -66,8 +66,9 @@ router.get("/callTrailsAPI", (req, res) => {
     .request(trailOptions)
     .then(response => {
       console.log("Response from Trails API: ");
-      console.log(response.data);
-      res.status(200).send(response.data);
+      const editedData = response.data["places"];
+      console.log(editedData);
+      res.status(200).send(editedData);
     })
     .catch(error => {
       console.log("There was an error: ");
