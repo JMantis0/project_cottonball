@@ -111,4 +111,16 @@ router.get("/test", (req, res) => {
   res.send(200);
 });
 
+router.get("/searchTrails", (req, res) => {
+  console.log(
+    "███████████████████████████████████████████████████████████████████"
+  );
+  console.log(
+    "███████████████████████████████████████████████████████████████████"
+  );
+  console.log("GET request from client: /api/searchTrails");
+  console.log("Sending OK status to client.");
+  res.send(200);
+});
+
 module.exports = router;
