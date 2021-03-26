@@ -133,6 +133,7 @@ const SearchTrails = ({ setTDState, setWDState, TDState, WDState }) => {
           </Grid>
         </Container>
       </main>
+      {/* Footer */}
       <footer className={classes.footer}>
         <Typography
           variant="subtitle1"
@@ -144,6 +145,7 @@ const SearchTrails = ({ setTDState, setWDState, TDState, WDState }) => {
         </Typography>
         <Copyright />
       </footer>
+      {/* End footer */}
     </React.Fragment>
   );
 };
