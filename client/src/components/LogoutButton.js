@@ -34,7 +34,9 @@ const LogoutButton = () => {
           onClose={handleClose}
         >
           {" "}
-          <Typography align="center">{user.nickname}</Typography>
+          <Typography id="menuTitle" align="center">
+            {user.name}
+          </Typography>
           <MenuItem onClick={handleClose}>My account</MenuItem>
           <MenuItem onClick={handleLogOut}>Logout</MenuItem>
         </Menu>
