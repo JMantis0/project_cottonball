@@ -3,7 +3,6 @@ import logo from "./logo.svg";
 import "./App.css";
 import TestDataBaseButton from "./components/TestDataBaseButton";
 import AuthLoginButton from "./components/AuthLoginButton";
-import LogoutButton from "./components/LogoutButton";
 import UserProfile from "./components/UserProfile";
 import SearchTrails from "./pages/SearchTrails";
 import TrailsPageButton from "./components/TrailsPageButton";
@@ -24,7 +23,6 @@ function App() {
             <AuthLoginButton />
             <TrailsPageButton />
             <TestDataBaseButton />
-            {/* <LogoutButton /> */}
             <img src={logo} className="App-logo" alt="logo" />
           </div>
         </div>

@@ -24,7 +24,7 @@ const LogoutButton = () => {
   return (
     isAuthenticated && (
       <div id="logout">
-        <Button variant="contained" color="blue" onClick={handleClick}>
+        <Button variant="contained" onClick={handleClick}>
           Menu
         </Button>
         <Menu

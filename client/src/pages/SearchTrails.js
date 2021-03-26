@@ -70,6 +70,10 @@ const SearchTrails = ({ setTDState, setWDState, TDState, WDState }) => {
         <div style={{ padding: 50 }} />
         <Bones width={window.innerWidth} height={window.innerHeight * 0.1} />
         <div style={{ padding: 10 }} />
+        <Bones width={window.innerWidth} height={window.innerHeight * 0.1} />
+        <div style={{ padding: 10 }} />
+        <Bones width={window.innerWidth} height={window.innerHeight * 0.1} />
+        <div style={{ padding: 10 }} />
       </div>
     );
   }
