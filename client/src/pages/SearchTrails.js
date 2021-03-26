@@ -1,7 +1,9 @@
 import React from "react";
+
+import Copyright from "../components/Copyright";
+
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
-import CameraIcon from "@material-ui/icons/PhotoCamera";
 import FilterHdrIcon from "@material-ui/icons/FilterHdr";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
@@ -13,22 +15,8 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import Link from "@material-ui/core/Link";
 import DarkSkyButton from "../components/DarkSkyButton";
 import TrailsButton from "../components/TrailsButton";
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
 
 const useStyles = makeStyles(theme => ({
   icon: {
