@@ -1,5 +1,5 @@
 import React from "react";
-import { object, func } from "prop-types";
+import { array, func } from "prop-types";
 
 import Copyright from "../components/Copyright";
 
@@ -157,8 +157,8 @@ const SearchTrails = ({ setTDState, setWDState, TDState, WDState }) => {
 SearchTrails.propTypes = {
   setWDState: func,
   setTDState: func,
-  WDState: object,
-  TDState: object
+  WDState: array,
+  TDState: array
 };
 
 export default SearchTrails;
