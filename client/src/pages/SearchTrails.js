@@ -52,7 +52,7 @@ const useStyles = makeStyles(theme => ({
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-export default function Album({ setTDState, setWDState, TDState, WDState }) {
+const SearchTrails = ({ setTDState, setWDState, TDState, WDState }) => {
   const classes = useStyles();
 
   return (
@@ -150,7 +150,9 @@ export default function Album({ setTDState, setWDState, TDState, WDState }) {
       {/* End footer */}
     </React.Fragment>
   );
-}
+};
+
+export default SearchTrails;
 
 // import React from "react";
 // // import { useHistory } from "react-router-dom";
