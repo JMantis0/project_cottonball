@@ -5,7 +5,7 @@ import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import Typography from "@material-ui/core/Typography";
 
-const LogoutButton = () => {
+const MenuButton = () => {
   const { logout, user, isAuthenticated } = useAuth0();
   const [anchorEl, setAnchorEl] = useState(null);
 
@@ -45,4 +45,4 @@ const LogoutButton = () => {
   );
 };
 
-export default LogoutButton;
+export default MenuButton;

@@ -4,11 +4,10 @@ import { array, func } from "prop-types";
 import { useAuth0 } from "@auth0/auth0-react";
 
 import Copyright from "../components/Copyright";
-import LogoutButton from "../components/LogoutButton";
+import MenuButton from "../components/MenuButton";
 import { Bones } from "react-bones/lib";
 
 import AppBar from "@material-ui/core/AppBar";
-import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 import FilterHdrIcon from "@material-ui/icons/FilterHdr";
 import Card from "@material-ui/core/Card";
@@ -90,13 +89,7 @@ const SearchTrails = ({ setTDState, setWDState, TDState, WDState }) => {
           <Typography variant="h6" color="inherit">
             Project Cottonball
           </Typography>
-          <Box ml={1}>
-            <Typography m={10} color="inherit">
-              Welcome {user.nickname}
-            </Typography>
-          </Box>
-
-          <LogoutButton />
+          <MenuButton />
         </Toolbar>
       </AppBar>
       <main>
@@ -110,7 +103,7 @@ const SearchTrails = ({ setTDState, setWDState, TDState, WDState }) => {
               color="textPrimary"
               gutterBottom
             >
-              Let's go hiking
+              Hi, {user.nickname}! Let's go hiking
             </Typography>
             <Typography
               variant="h5"
