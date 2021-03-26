@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import DarkSkyButton from "./components/DarkSkyButton";
-import TrailsButton from "./components/TrailsButton";
 import TestDataBaseButton from "./components/TestDataBaseButton";
 import AuthLoginButton from "./components/AuthLoginButton";
 import LogoutButton from "./components/LogoutButton";

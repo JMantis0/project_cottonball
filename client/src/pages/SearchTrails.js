@@ -2,7 +2,7 @@ import React from "react";
 import { array, func } from "prop-types";
 
 import Copyright from "../components/Copyright";
-
+import LogoutButton from "../components/LogoutButton";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import FilterHdrIcon from "@material-ui/icons/FilterHdr";
@@ -64,6 +64,7 @@ const SearchTrails = ({ setTDState, setWDState, TDState, WDState }) => {
           <Typography variant="h6" color="inherit" noWrap>
             Project Cottonball
           </Typography>
+          <LogoutButton />
         </Toolbar>
       </AppBar>
       <main>
