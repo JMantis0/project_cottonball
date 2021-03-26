@@ -1,4 +1,5 @@
 import React from "react";
+import { object, func } from "prop-types";
 
 import Copyright from "../components/Copyright";
 
@@ -50,8 +51,6 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(6)
   }
 }));
-
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const SearchTrails = ({ setTDState, setWDState, TDState, WDState }) => {
   const classes = useStyles();
@@ -153,6 +152,13 @@ const SearchTrails = ({ setTDState, setWDState, TDState, WDState }) => {
       {/* End footer */}
     </React.Fragment>
   );
+};
+
+SearchTrails.propTypes = {
+  setWDState: func,
+  setTDState: func,
+  WDState: object,
+  TDState: object
 };
 
 export default SearchTrails;
