@@ -1,27 +1,24 @@
 import React from "react";
 import { Button } from "@material-ui/core";
+import { func } from "prop-types";
 const axios = require("axios").default;
 
 const TrailsButton = ({ setTDState }) => {
   //  This function sets up an options object and then makes a client-side axios get request to
   //  the Trails API.
   const callTrailApiSeattle = () => {
-    console.log("Call Trails API Button Clicked...");
-    console.log("Sending get request to backend");
-    console.log(
-      "Expecting backend to call Trails API and return response object"
-    );
+    console.log("Request GET /api/callTrailsAPI");
     axios
       .get("/api/callTrailsAPI")
-      .then(response => {
-        console.log("Response from server: ");
-        console.log(response.data);
-        setTDState(response.data);
+      .then(trailData => {
+        console.log(
+          "Response from request GET /api/callTrailsAPI",
+          trailData.data
+        );
+        setTDState(trailData.data);
       })
       .catch(error => {
-        console.log("There was an error: ");
-        console.log("Is this code even working? ");
-        console.log(error);
+        console.log("Error on GET /api/callTrailsAPI", error);
       });
   };
   return (
@@ -34,10 +31,12 @@ const TrailsButton = ({ setTDState }) => {
           callTrailApiSeattle();
         }}
       >
-        Call Trails API (Check Console)
+        Get Trails for Seattle
       </Button>
     </div>
   );
 };
-
+TrailsButton.propTypes = {
+  setTDState: func
+};
 export default TrailsButton;

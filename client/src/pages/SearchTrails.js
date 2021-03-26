@@ -1,7 +1,14 @@
 import React from "react";
+import { array, func, object } from "prop-types";
+
+import { useAuth0 } from "@auth0/auth0-react";
+
+import Copyright from "../components/Copyright";
+import MenuButton from "../components/MenuButton";
+import { Bones } from "react-bones/lib";
+
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
-import CameraIcon from "@material-ui/icons/PhotoCamera";
 import FilterHdrIcon from "@material-ui/icons/FilterHdr";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
@@ -9,26 +16,13 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
+import Link from "@material-ui/core/Link";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import Link from "@material-ui/core/Link";
 import DarkSkyButton from "../components/DarkSkyButton";
 import TrailsButton from "../components/TrailsButton";
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
 
 const useStyles = makeStyles(theme => ({
   icon: {
@@ -62,28 +56,40 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-export default function Album({ setTDState, setWDState, TDState, WDState }) {
+const SearchTrails = ({ setTDState, setWDState, TDState, WDState }) => {
+  const { user, isAuthenticated, isLoading } = useAuth0();
   const classes = useStyles();
 
+  if (isLoading) {
+    return (
+      <div>
+        <Bones width={window.innerWidth} height={window.innerHeight * 0.1} />
+        <div style={{ padding: 30 }} />
+        <Bones width={window.innerWidth} height={window.innerHeight * 0.25} />
+        <div style={{ padding: 50 }} />
+        <Bones width={window.innerWidth} height={window.innerHeight * 0.1} />
+        <div style={{ padding: 10 }} />
+        <Bones width={window.innerWidth} height={window.innerHeight * 0.1} />
+        <div style={{ padding: 10 }} />
+        <Bones width={window.innerWidth} height={window.innerHeight * 0.1} />
+        <div style={{ padding: 10 }} />
+      </div>
+    );
+  }
+
+  if (!isAuthenticated) {
+    return <div>You are not logged in</div>;
+  }
   return (
     <React.Fragment>
       <CssBaseline />
       <AppBar position="relative">
-        <button
-          onClick={() => {
-            console.log(TDState);
-            console.log(WDState);
-          }}
-        >
-          Testing State
-        </button>
         <Toolbar>
           <FilterHdrIcon className={classes.icon} />
-          <Typography variant="h6" color="inherit" noWrap>
+          <Typography variant="h6" color="inherit">
             Project Cottonball
           </Typography>
+          <MenuButton />
         </Toolbar>
       </AppBar>
       <main>
@@ -97,7 +103,7 @@ export default function Album({ setTDState, setWDState, TDState, WDState }) {
               color="textPrimary"
               gutterBottom
             >
-              Let's go hiking
+              Hi, {user.nickname}! Let's go hiking
             </Typography>
             <Typography
               variant="h5"
@@ -134,9 +140,7 @@ export default function Album({ setTDState, setWDState, TDState, WDState }) {
                     <Typography gutterBottom variant="h5" component="h2">
                       {result.name}
                     </Typography>
-                    <Typography>
-                      {"City of " + result.city}.
-                    </Typography>
+                    <Typography>{"City of " + result.city}.</Typography>
                   </CardContent>
                   <CardActions>
                     <Button size="small" color="primary">
@@ -154,71 +158,33 @@ export default function Album({ setTDState, setWDState, TDState, WDState }) {
       </main>
       {/* Footer */}
       <footer className={classes.footer}>
-        <Typography variant="h6" align="center" gutterBottom>
-          Footer
-        </Typography>
         <Typography
           variant="subtitle1"
           align="center"
           color="textSecondary"
           component="p"
         >
-          Something here to give the footer a purpose!
+          Developed by{" "}
+          <Link color="inherit" href="https://github.com/kaitekelly">
+            Kaite Kelly
+          </Link>{" "}
+          {"&"}{" "}
+          <Link color="inherit" href="https://github.com/JMantis0">
+            Jesse Mazur
+          </Link>
         </Typography>
         <Copyright />
       </footer>
       {/* End footer */}
     </React.Fragment>
   );
-}
+};
 
-// import React from "react";
-// // import { useHistory } from "react-router-dom";
-// import { Box, Grid, Container } from "@material-ui/core";
-// import SimpleCard from "../components/SimpleCard";
-// import NavBar from "../components/NavBar";
-// import TrailsButton from "../components/TrailsButton";
+SearchTrails.propTypes = {
+  setWDState: func,
+  setTDState: func,
+  WDState: object,
+  TDState: array
+};
 
-// const SearchTrails = () => {
-//   const header_style = {
-//     color: "white",
-//     backgroundColor: "DodgerBlue",
-//     padding: "30px",
-//     margin: "40px",
-//     fontFamily: "Roboto"
-//   };
-//   return (
-//     <div>
-//       <NavBar />
-
-//       <Box>
-//         <Container>
-//           <Grid
-//             container
-//             direction-xs-row
-//             justify="center"
-//             alignItems="center"
-//             item
-//             spacing={3}
-//           >
-//             <h1 style={header_style}>This is the Search Trails page</h1>
-//           </Grid>
-//           <Grid
-//             container
-//             direction="row"
-//             justify="center"
-//             alignItems="center"
-//             spacing={3}
-//           >
-//             <SimpleCard xs={3} />
-//             <SimpleCard xs={3} />
-//             <SimpleCard xs={3} />
-//             <SimpleCard xs={3} />
-//           </Grid>
-//         </Container>
-//       </Box>
-//     </div>
-//   );
-// };
-
-// export default SearchTrails;
+export default SearchTrails;

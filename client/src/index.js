@@ -12,8 +12,8 @@ ReactDOM.render(
     clientId="aNLTSSORpHeSWRsFxjwoTikI5BriwnCn"
     redirectUri={
       window.location.href.includes("localhost")
-        ? "http://localhost:3000"
-        : "https://project-cottonball.herokuapp.com/"
+        ? "http://localhost:3000/searchTrails"
+        : "https://project-cottonball.herokuapp.com/searchTrails"
     }
   >
     <App />

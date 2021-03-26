@@ -1,25 +1,24 @@
 import React from "react";
 import { Button } from "@material-ui/core";
+import { func } from "prop-types";
 const axios = require("axios").default;
 
 const DarkSkyButton = ({ setWDState }) => {
   //  This function sets up an options object and then makes a client-side axios get request to
   //  the DarkSky weather API.
   const callDarkSkyApiSeattle = () => {
-    console.log("Call DarkSky Button Clicked...");
-    console.log("Sending get request to backend");
-    console.log("Expecting backend to call DarkSky and return response object");
+    console.log("Request GET /api/callDarkSky");
     axios
       .get("/api/callDarkSky")
-      .then(response => {
-        console.log("Response from server: ");
-        console.log(response.data);
-        console.log("type of setWDState");
-        setWDState(response.data);
+      .then(weatherData => {
+        console.log(
+          "Response from request GET /api/callDarkSky",
+          weatherData.data
+        );
+        setWDState(weatherData.data);
       })
       .catch(error => {
-        console.log("There was an error: ");
-        console.log(error);
+        console.log("Error on GET /api/callDarkSky", error);
       });
   };
   return (
@@ -38,4 +37,7 @@ const DarkSkyButton = ({ setWDState }) => {
   );
 };
 
+DarkSkyButton.propTypes = {
+  setWDState: func
+};
 export default DarkSkyButton;
