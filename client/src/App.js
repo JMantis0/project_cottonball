@@ -24,13 +24,9 @@ function App() {
             <h2>Welcome to Project Cottonball</h2>
             <UserProfile />
             <AuthLoginButton />
-            <DarkSkyButton />
-            <TrailsButton />
             <TrailsPageButton />
-            
             <TestDataBaseButton />
             <LogoutButton />
-            <button>Search Trails page</button>
             <img src={logo} className="App-logo" alt="logo" />
           </div>
         </div>
