@@ -115,9 +115,7 @@ const SearchTrails = ({ setTDState, setWDState, TDState, WDState }) => {
                     <Typography gutterBottom variant="h5" component="h2">
                       {result.name}
                     </Typography>
-                    <Typography>
-                      {"City of " + result.city}.
-                    </Typography>
+                    <Typography>{"City of " + result.city}.</Typography>
                   </CardContent>
                   <CardActions>
                     <Button size="small" color="primary">
@@ -141,7 +139,14 @@ const SearchTrails = ({ setTDState, setWDState, TDState, WDState }) => {
           color="textSecondary"
           component="p"
         >
-          Developed by <Link color="inherit" href="https://github.com/kaitekelly">Kaite Kelly</Link> {"&"} <Link color="inherit" href="https://github.com/JMantis0">Jesse Mazur</Link>
+          Developed by{" "}
+          <Link color="inherit" href="https://github.com/kaitekelly">
+            Kaite Kelly
+          </Link>{" "}
+          {"&"}{" "}
+          <Link color="inherit" href="https://github.com/JMantis0">
+            Jesse Mazur
+          </Link>
         </Typography>
         <Copyright />
       </footer>
@@ -151,54 +156,3 @@ const SearchTrails = ({ setTDState, setWDState, TDState, WDState }) => {
 };
 
 export default SearchTrails;
-
-// import React from "react";
-// // import { useHistory } from "react-router-dom";
-// import { Box, Grid, Container } from "@material-ui/core";
-// import SimpleCard from "../components/SimpleCard";
-// import NavBar from "../components/NavBar";
-// import TrailsButton from "../components/TrailsButton";
-
-// const SearchTrails = () => {
-//   const header_style = {
-//     color: "white",
-//     backgroundColor: "DodgerBlue",
-//     padding: "30px",
-//     margin: "40px",
-//     fontFamily: "Roboto"
-//   };
-//   return (
-//     <div>
-//       <NavBar />
-
-//       <Box>
-//         <Container>
-//           <Grid
-//             container
-//             direction-xs-row
-//             justify="center"
-//             alignItems="center"
-//             item
-//             spacing={3}
-//           >
-//             <h1 style={header_style}>This is the Search Trails page</h1>
-//           </Grid>
-//           <Grid
-//             container
-//             direction="row"
-//             justify="center"
-//             alignItems="center"
-//             spacing={3}
-//           >
-//             <SimpleCard xs={3} />
-//             <SimpleCard xs={3} />
-//             <SimpleCard xs={3} />
-//             <SimpleCard xs={3} />
-//           </Grid>
-//         </Container>
-//       </Box>
-//     </div>
-//   );
-// };
-
-// export default SearchTrails;
