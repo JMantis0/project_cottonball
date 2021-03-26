@@ -71,14 +71,6 @@ export default function Album({ setTDState, setWDState, TDState, WDState }) {
     <React.Fragment>
       <CssBaseline />
       <AppBar position="relative">
-        <button
-          onClick={() => {
-            console.log(TDState);
-            console.log(WDState);
-          }}
-        >
-          Testing State
-        </button>
         <Toolbar>
           <FilterHdrIcon className={classes.icon} />
           <Typography variant="h6" color="inherit" noWrap>
