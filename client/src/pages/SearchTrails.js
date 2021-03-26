@@ -1,5 +1,5 @@
 import React from "react";
-import { array, func } from "prop-types";
+import { array, func, object } from "prop-types";
 
 import { useAuth0 } from "@auth0/auth0-react";
 
@@ -183,7 +183,7 @@ const SearchTrails = ({ setTDState, setWDState, TDState, WDState }) => {
 SearchTrails.propTypes = {
   setWDState: func,
   setTDState: func,
-  WDState: array,
+  WDState: object,
   TDState: array
 };
 
