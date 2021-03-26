@@ -24,7 +24,7 @@ function App() {
             <AuthLoginButton />
             <TrailsPageButton />
             <TestDataBaseButton />
-            <LogoutButton />
+            {/* <LogoutButton /> */}
             <img src={logo} className="App-logo" alt="logo" />
           </div>
         </div>

@@ -1,15 +1,20 @@
 import React from "react";
 import { array, func } from "prop-types";
 
+import { useAuth0 } from "@auth0/auth0-react";
+
 import Copyright from "../components/Copyright";
 import LogoutButton from "../components/LogoutButton";
+
 import AppBar from "@material-ui/core/AppBar";
+import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 import FilterHdrIcon from "@material-ui/icons/FilterHdr";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
+import CircularProgress from "@material-ui/core/CircularProgress";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
 import Link from "@material-ui/core/Link";
@@ -53,17 +58,37 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const SearchTrails = ({ setTDState, setWDState, TDState, WDState }) => {
+  const { user, isAuthenticated, isLoading } = useAuth0();
   const classes = useStyles();
 
+  if (true) {
+    return (
+      <Grid container justify="center">
+        <Grid style={{ width: window.innerWidth }} item>hi
+          {/* <CircularProgress size="50%" style={{ height: window.innerHeight }} /> */}
+        </Grid>
+      </Grid>
+    );
+  }
+
+  if (!isAuthenticated) {
+    return <div>You are not logged in</div>;
+  }
   return (
     <React.Fragment>
       <CssBaseline />
       <AppBar position="relative">
         <Toolbar>
           <FilterHdrIcon className={classes.icon} />
-          <Typography variant="h6" color="inherit" noWrap>
+          <Typography variant="h6" color="inherit">
             Project Cottonball
           </Typography>
+          <Box ml={1}>
+            <Typography m={10} color="inherit">
+              Welcome {user.nickname}
+            </Typography>
+          </Box>
+
           <LogoutButton />
         </Toolbar>
       </AppBar>
