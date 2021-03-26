@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "@material-ui/core";
+import { func } from "prop-types";
 const axios = require("axios").default;
 
 const DarkSkyButton = ({ setWDState }) => {
@@ -38,4 +39,8 @@ const DarkSkyButton = ({ setWDState }) => {
   );
 };
 
+
+DarkSkyButton.propTypes = {
+  setWDState: func
+};
 export default DarkSkyButton;
