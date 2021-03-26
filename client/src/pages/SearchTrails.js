@@ -5,6 +5,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 import Copyright from "../components/Copyright";
 import LogoutButton from "../components/LogoutButton";
+import { Bones } from "react-bones/lib";
 
 import AppBar from "@material-ui/core/AppBar";
 import Box from "@material-ui/core/Box";
@@ -14,7 +15,6 @@ import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-import CircularProgress from "@material-ui/core/CircularProgress";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
 import Link from "@material-ui/core/Link";
@@ -61,13 +61,16 @@ const SearchTrails = ({ setTDState, setWDState, TDState, WDState }) => {
   const { user, isAuthenticated, isLoading } = useAuth0();
   const classes = useStyles();
 
-  if (true) {
+  if (isLoading) {
     return (
-      <Grid container justify="center">
-        <Grid style={{ width: window.innerWidth }} item>hi
-          {/* <CircularProgress size="50%" style={{ height: window.innerHeight }} /> */}
-        </Grid>
-      </Grid>
+      <div>
+        <Bones width={window.innerWidth} height={window.innerHeight * 0.1} />
+        <div style={{ padding: 30 }} />
+        <Bones width={window.innerWidth} height={window.innerHeight * 0.25} />
+        <div style={{ padding: 50 }} />
+        <Bones width={window.innerWidth} height={window.innerHeight * 0.1} />
+        <div style={{ padding: 10 }} />
+      </div>
     );
   }
 

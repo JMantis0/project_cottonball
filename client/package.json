@@ -11,6 +11,7 @@
     "@material-ui/lab": "^4.0.0-alpha.57",
     "@material-ui/styles": "^4.11.3",
     "react": "^16.13.1",
+    "react-bones": "^1.0.3",
     "react-dom": "^16.13.1",
     "react-dotenv": "^0.1.0",
     "react-router-dom": "^5.2.0",
