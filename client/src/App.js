@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
   const [TDState, setTDState] = useState([]); // Trail Data
-  const [WDState, setWDState] = useState([]); // Weather Data
+  const [WDState, setWDState] = useState({}); // Weather Data
 
   return (
     <Router>
