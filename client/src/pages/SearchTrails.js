@@ -128,7 +128,7 @@ const SearchTrails = ({ setTDState, setWDState, TDState, WDState }) => {
         <Container className={classes.cardGrid} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>
-            {TDState.map((result, index) => (
+            {TDState.map((place, index) => (
               <Grid item key={index} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
                   <CardMedia
@@ -138,9 +138,20 @@ const SearchTrails = ({ setTDState, setWDState, TDState, WDState }) => {
                   />
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      {result.name}
+                      {place.name}
                     </Typography>
-                    <Typography>{"City of " + result.city}.</Typography>
+                    <Typography gutterBottom variant="body1" component="h2">
+                      Activities
+                      <ul>
+                        {place.activities.map((activity, index) => {
+                          //Capitalize the activity name
+                          const name= activity.activity_type_name;
+                          const nameCapitalized = name.charAt(0).toUpperCase() + name.slice(1);
+                          return <li key={index}>{nameCapitalized}</li>
+                        })}
+                      </ul>
+                    </Typography>
+                    <Typography>{"City of " + place.city}.</Typography>
                   </CardContent>
                   <CardActions>
                     <Button size="small" color="primary">

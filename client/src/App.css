@@ -27,9 +27,8 @@
 }
 
 #logout {
-  position: absolute;
-  right: 0;
-  margin-right: 1rem;
+  margin: auto auto auto auto;
+  margin-right: 0rem;
 }
 
 #menuTitle {
