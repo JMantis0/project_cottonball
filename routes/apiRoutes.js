@@ -76,6 +76,7 @@ router.get("/callTrailsAPI", (req, res) => {
       res.status(500).send(error);
     });
 });
+
 router.put("/testCreate", (req, res) => {
   console.log(
     "███████████████████████████████████████████████████████████████████"
